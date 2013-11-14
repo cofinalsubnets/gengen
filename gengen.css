@@ -1,0 +1,249 @@
+.dark, body, .textbox {
+  color: #cdcdcd;
+  background-color: #303030;
+}
+.dark a, body a, .textbox a {
+  color: #cdcdcd;
+}
+
+.light, header, #msg_box {
+  color: #202020;
+  background-color: #909090;
+}
+.light a, header a, #msg_box a {
+  color: #202020;
+}
+
+header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+header span {
+  padding: 2px;
+  font-size: large;
+}
+
+body {
+  font-family: "Courier New", "Lucida Console", monospace, Georgia, sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button {
+  border-radius: 3px;
+  outline: none;
+  background-color: #909090;
+  border: 1px solid #cdcdcd;
+  color: #202020;
+  cursor: pointer;
+}
+button:active {
+  background-color: #707070;
+  border: 1px solid #adadad;
+}
+
+.r {
+  float: right;
+}
+
+.prereq_box {
+  display: none;
+}
+
+:not(#root) > .dependents .prereq_box {
+  display: block;
+}
+
+#shadow {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: all 0.2s linear;
+  opacity: 0.0;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 1;
+}
+#shadow.gen {
+  opacity: 0.7;
+  visibility: visible;
+}
+
+#msg_box {
+  position: absolute;
+  width: 60%;
+  top: 3em;
+  left: 20%;
+  max-height: 80%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  z-index: 2;
+  padding: 1em;
+  overflow: auto;
+}
+#msg_box.gen {
+  opacity: 1;
+  visibility: visible;
+}
+
+#code_box {
+  overflow: auto;
+}
+
+#output {
+  border-top: 1px dashed #707070;
+  list-style-position: inside;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+#gennum {
+  width: 3em;
+  border: 1px dotted #707070;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+#root {
+  margin-top: 3em;
+}
+
+.prototype {
+  display: none;
+}
+
+.left {
+  background-color: #505050;
+}
+
+.right {
+  padding-top: 4px;
+  padding-left: 4px;
+  display: none;
+}
+
+.dependents > .term {
+  display: table-cell;
+  padding-right: 3px;
+}
+.dependents > .term > span {
+  border-radius: 3px;
+}
+.dependents > .term:not(:first-child) {
+  padding-left: 3px;
+  margin-left: 3px;
+}
+.dependents > .term.open > .left {
+  display: table-cell;
+}
+.dependents > .term.open > .left > .detailed_view {
+  display: block;
+}
+.dependents > .term.open > .left > .collapsed_view {
+  border-bottom: 1px dashed #909090;
+  padding: 4px;
+}
+.dependents > .term.open > .left > .collapsed_view button {
+  margin-left: 4px;
+  display: inline;
+}
+.dependents > .term.open > .right.show {
+  display: table-cell;
+}
+.dependents > .term.open + .open {
+  border-left: 1px dashed #909090;
+}
+
+.delete {
+  display: none;
+}
+
+.deps {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.dependents {
+  overflow: auto;
+  margin-top: 6px;
+  padding-top: 6px;
+  list-style: none;
+  display: block;
+  padding-left: 0px;
+}
+.dependents:not(:empty) {
+  border-top: 2px dashed #cdcdcd;
+}
+
+.term_button {
+  width: 24px;
+  height: 24px;
+}
+
+.collapsed_view {
+  text-align: right;
+  border-radius: 3px;
+}
+
+.detailed_view {
+  transition: all 0.2s ease;
+  overflow: hidden;
+  display: none;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.textbox {
+  outline: none;
+  display: block;
+  border: 1px solid #cdcdcd;
+}
+
+.words {
+  resize: none;
+  height: 32em;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prereq {
+  display: block;
+}
+
+.options {
+  list-style: none;
+  padding: 4px;
+  font-size: small;
+}
+.options li {
+  margin-top: 4px;
+}
+.options .percent {
+  float: right;
+  margin-right: 8px;
+}
+.options .fragment {
+  float: right;
+  margin-right: 8px;
+}
+.options .p {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
