@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/qunit.css"></script>
+    <script src="lib/jquery-1.10.2.min.js"></script>
+    <script src="lib/qunit.js"></script>
+    <script src="../lib/gengen.js"></script>
+    <script src="test.js"></script>
+    <style> .prototype { display: none; } </style>
+  </head>
+  <body>
+    <div id="qunit-fixture">
+    
+      <li class="term deleteable open"><span class="left">
+          <div class="collapsed_view">
+            <button title="open/close" class="collapse term_button">-</button>
+            <button title="delete" class="delete term_button">x</button>
+          </div>
+          <div class="detailed_view">
+            <textarea class="words textbox update"></textarea>
+            <ul class="options">
+              <li>
+                <label>Inclusion:</label>
+                <label class="percent">100%</label>
+                <input type="range" value="100" class="p update">
+              </li>
+              <li>
+                <label>Fragment?</label>
+                <input type="checkbox" class="fragment">
+              </li>
+              <li class="prereq_box">
+                <label>Prereq:</label>
+                <input type="text" class="prereq textbox">
+              </li>
+            </ul>
+            <button class="deps">Show dependents</button>
+          </div></span><span class="right">
+          <button title="Add term" class="add_term">Add term</button>
+          <ol class="dependents"></ol></span></li>
+    </div>
+      <li class="term deleteable open prototype"><span class="left">
+          <div class="collapsed_view">
+            <button title="open/close" class="collapse term_button">-</button>
+            <button title="delete" class="delete term_button">x</button>
+          </div>
+          <div class="detailed_view">
+            <textarea class="words textbox update"></textarea>
+            <ul class="options">
+              <li>
+                <label>Inclusion:</label>
+                <label class="percent">100%</label>
+                <input type="range" value="100" class="p update">
+              </li>
+              <li>
+                <label>Fragment?</label>
+                <input type="checkbox" class="fragment">
+              </li>
+              <li class="prereq_box">
+                <label>Prereq:</label>
+                <input type="text" class="prereq textbox">
+              </li>
+            </ul>
+            <button class="deps">Show dependents</button>
+          </div></span><span class="right">
+          <button title="Add term" class="add_term">Add term</button>
+          <ol class="dependents"></ol></span></li>
+    <div id="qunit"></div>
+  </body>
+</html
+

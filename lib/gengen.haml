@@ -1,0 +1,56 @@
+!!!
+%html
+  %head
+    %title gengen
+    %link{rel: 'stylesheet', href: 'gengen.css'}
+    %script{src: 'jquery-1.10.2.min.js'}
+    %script{src: 'gengen.js'}
+
+  %body
+    %header
+      %span gengen
+
+    #shadow
+    #msg_box
+      #generator_box
+        %input#gennum{type: "text", value: "30"}
+        %button#regen Again!
+        %ul#output
+      %code#code_box
+      #help_box
+        :markdown
+          #{File.read File.join(File.dirname(__FILE__), 'help.markdown')}
+
+    #root.term
+      %button.add_term{title: "Add term"} Add term
+      %label#help0&= " <- click me!"
+      %span.r
+        %button#generate{title: "Run generator"} Generate
+        %button#snippet{title: "See generator source code"} Snippet
+        %button#link{title: "Get a link to this generator"} Link
+        %button#helpme{title: "Help"} Help
+      %ol.dependents
+
+    %li.term.deleteable.open.prototype
+      %span.left
+        .collapsed_view
+          %button.collapse.term_button{title: "open/close"}> -
+          %button.delete.term_button{title: "delete"}> x
+        .detailed_view
+          %textarea.words.textbox.update
+          %ul.options
+            %li
+              %label Inclusion:
+              %label.percent 100%
+              %input.p.update{type: "range", value: "100"}
+            %li
+              %label Fragment?
+              %input.fragment{type: "checkbox"}
+            %li.prereq_box
+              %label Condition:
+              %input.prereq.textbox{type: "text"}
+          %button.deps Show dependents
+      %span.right
+        %button.add_term{title: "Add term"} Add term
+        %ol.dependents
+

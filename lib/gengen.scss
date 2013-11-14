@@ -1,0 +1,279 @@
+$dark-bg: #303030;
+$dark-fg: #cdcdcd;
+$light-bg: #909090;
+$light-fg: #202020;
+$term-bg: #505050;
+$fonts: "Courier New", "Lucida Console", monospace, Georgia, sans-serif;
+
+.dark {
+  color: $dark-fg;
+  background-color: $dark-bg;
+  a {
+    color: $dark-fg;
+  }
+}
+
+.light {
+  color: $light-fg;
+  background-color: $light-bg;
+  a {
+    color: $light-fg;
+  }
+}
+
+header {
+  @extend .light;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  span {
+    padding: 2px;
+    font-size: large;
+  }
+}
+
+body {
+  @extend .dark;
+  font-family: $fonts;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+button {
+  border-radius: 3px;
+  outline: none;
+  background-color: $light-bg;
+  border: 1px solid $dark-fg;
+  color: #202020;
+  cursor: pointer;
+
+
+  &:active {
+    background-color: #707070;
+    border: 1px solid #adadad;
+  }
+}
+
+.r {
+  float: right;
+}
+
+.prereq_box {
+  display: none;
+}
+
+:not(#root) > .dependents .prereq_box {
+  display: block;
+}
+
+#shadow {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: all 0.2s linear;
+  opacity: 0.0;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 1;
+
+  &.gen {
+    opacity: 0.7;
+    visibility: visible;
+  }
+}
+
+#msg_box {
+  @extend .light;
+  position: absolute;
+  width: 60%;
+  top: 3em;
+  left: 20%;
+  max-height: 80%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  z-index: 2;
+  padding: 1em;
+  overflow: auto;
+
+  &.gen {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#code_box {
+  overflow: auto;
+}
+
+#output {
+  border-top: 1px dashed #707070;
+  list-style-position: inside;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+#gennum {
+  width: 3em;
+  border: 1px dotted #707070;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+#root {
+  margin-top: 3em;
+}
+
+.prototype {
+  display: none;
+}
+
+.left {
+  background-color: $term-bg;
+}
+
+.right {
+  padding-top: 4px;
+  padding-left: 4px;
+  display: none;
+}
+
+.dependents > .term {
+  display: table-cell;
+  padding-right: 3px;
+
+  > span {
+    border-radius: 3px;
+  }
+
+  &:not(:first-child) {
+    padding-left: 3px;
+    margin-left: 3px;
+  }
+
+  &.open {
+    > .left {
+      display: table-cell;
+
+      > .detailed_view {
+        display: block;
+      }
+
+      > .collapsed_view {
+        border-bottom: 1px dashed $light-bg;
+        padding: 4px;
+
+        button {
+          margin-left: 4px;
+          display: inline;
+        }
+      }
+    }
+
+    > .right.show {
+      display: table-cell;
+    }
+
+    + .open {
+      border-left: 1px dashed $light-bg;
+    }
+  }
+}
+
+.delete {
+  display: none;
+}
+
+.deps {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.dependents {
+  overflow: auto;
+  margin-top: 6px;
+  padding-top: 6px;
+  list-style: none;
+  display: block;
+  padding-left: 0px;
+
+  &:not(:empty) {
+    border-top: 2px dashed $dark-fg;
+  }
+}
+
+.term_button {
+  width: 24px;
+  height: 24px;
+}
+
+.collapsed_view {
+  text-align: right;
+  border-radius: 3px;
+}
+
+.detailed_view {
+  transition: all 0.2s ease;
+  overflow: hidden;
+  display: none;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.textbox {
+  @extend .dark;
+  outline: none;
+  display: block;
+  border: 1px solid $dark-fg;
+}
+
+.words {
+  resize: none;
+//  width: 120px;
+  height: 32em;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prereq {
+  display: block;
+}
+
+.options {
+  list-style: none;
+  padding: 4px;
+  li {
+    margin-top: 4px;
+  }
+  font-size: small;
+  .percent {
+    float: right;
+    margin-right: 8px;
+  }
+
+  .fragment {
+    float: right;
+    margin-right: 8px;
+  }
+  .p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
