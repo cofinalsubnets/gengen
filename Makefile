@@ -5,7 +5,7 @@ TESTDIR = test/lib
 JQVERSION = 1.10.2
 QUNITVERSION = 1.12.0
 JQUERY = jquery-$(JQVERSION).min.js
-FILES = gengen.html gengen.js gengen.css $(JQUERY)
+FILES = index.html gengen.js gengen.css $(JQUERY)
 TESTFILES = qunit.js qunit.css gengen.js $(JQUERY)
 PORT ?= 8080
 
