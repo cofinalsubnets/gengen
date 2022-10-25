@@ -1,14 +1,17 @@
-body { font-family: "Courier New", "Lucida Console", monospace, Georgia, sans-serif; }
+body {
+  font-family: "Courier New", "Lucida Console", monospace, Georgia, sans-serif;
+  margin: 0px; }
 
-.dark, .textbox { color: #cdcdcd; background-color: #303030; }
-
-.dark a, .textbox a { color: #cdcdcd; }
-.light, #msg_box { color: #202020; background-color: #909090; }
-.light a, #msg_box a { color: #202020; }
-header { position: absolute; top: 0px; left: 0px; width: 100%; }
-header span { padding: 2px; font-size: large; }
+header { padding: 2px; font-size: large; }
 
 a:hover { text-decoration: none; font-weight: bold; }
+
+.dark { color: #cdcdcd; background-color: #303030; }
+.dark a { color: #cdcdcd; }
+
+.light { color: #202020; background-color: #909090; }
+.light a { color: #202020; }
+
 
 button {
   border-radius: 3px;
@@ -17,6 +20,7 @@ button {
   border: 1px solid #cdcdcd;
   color: #202020;
   cursor: pointer; }
+
 button:active {
   background-color: #707070;
   border: 1px solid #adadad; }
@@ -71,12 +75,10 @@ button:active {
   margin-right: 8px;
   margin-bottom: 8px; }
 
-#root { margin-top: 3em; }
+#root { padding: 0.5em; }
 
 .prototype { display: none; }
-
 .left { background-color: #505050; }
-
 .right { padding-top: 4px; padding-left: 4px; display: none; }
 
 .dependents > .term {
@@ -150,12 +152,7 @@ button:active {
   padding: 4px;
   font-size: small; }
 .options li { margin-top: 4px; }
-.options .percent {
-  float: right;
-  margin-right: 8px; }
-.options .fragment {
-  float: right;
-  margin-right: 8px; }
+.options .percent, .options .fragment { margin-right: 8px; }
 .options .p {
   display: block;
   margin-left: auto;

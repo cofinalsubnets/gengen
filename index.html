@@ -4,16 +4,17 @@
     <title>gengen</title>
     <meta charset="utf-8"/>
     <link href='gengen.css' rel='stylesheet'>
-    <script src='jquery-1.10.2.min.js'></script>
+    <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
     <script src='gengen.js'></script>
   </head>
   <body class="dark">
     <header class="light">
-      <span>gengen</span>
+      gengen
     </header>
+
     <div id='shadow'></div>
 
-    <div id='msg_box'>
+    <div id='msg_box' class='light'>
       <div id='generator_box'>
         <input id='gennum' type='text' value='30'>
         <button id='regen'>Again!</button>
@@ -86,24 +87,23 @@
     <li class='term deleteable open prototype'>
       <span class='left'>
         <div class='collapsed_view'>
-          <button class='collapse term_button' title='open/close'>-</button>
-          <button class='delete term_button' title='delete'>x</button>
+          <button class='collapse term_button' title='open/close'>-</button><button class='delete term_button' title='delete'>x</button>
         </div>
         <div class='detailed_view'>
-          <textarea class='words textbox update'></textarea>
+          <textarea class='dark words textbox update'></textarea>
           <ul class='options'>
             <li>
               <label>Inclusion:</label>
-              <label class='percent'>100%</label>
+              <label class='percent r'>100%</label>
               <input class='p update' type='range' value='100'>
             </li>
             <li>
               <label>Fragment?</label>
-              <input class='fragment' type='checkbox'>
+              <input class='fragment r' type='checkbox'>
             </li>
             <li class='prereq_box'>
               <label>Condition:</label>
-              <input class='prereq textbox' type='text'>
+              <input class='prereq dark textbox' type='text'>
             </li>
           </ul>
           <button class='deps'>Show dependents</button>
